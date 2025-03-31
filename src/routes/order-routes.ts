@@ -1,32 +1,23 @@
 import { Router } from "express";
+import {
+  createNewOrder,
+  deleteOrderById,
+  getAllOrders,
+  getOrderById,
+  updateOrderById,
+} from "../controllers/order-controller";
 
 const router = Router();
 
 // GET ALL ORDERS
-router.get("/", (req, res) => {
-  res.status(200).json({ message: "healthy orders GET" });
-});
+router.get("/", getAllOrders);
 // GET ORDER BY ID
-router.get("/:id", (req, res) => {
-  res
-    .status(200)
-    .json({ message: `healthy get single order with ID: ${req.params.id}` });
-});
+router.get("/:id", getOrderById);
 // CREATE NEW ORDER
-router.post("/", (req, res) => {
-  res.status(200).json({ message: "healthy create new order" });
-});
+router.post("/", createNewOrder);
 // UPDATE ORDER BY ID
-router.put("/:id", (req, res) => {
-  res.status(200).json({
-    message: `healthy update single order with ID: ${req.params.id}`,
-  });
-});
+router.put("/:id", updateOrderById);
 // DELETE ORDER BY ID
-router.delete("/:id", (req, res) => {
-  res.status(200).json({
-    message: `healthy delete single order with ID: ${req.params.id}`,
-  });
-});
+router.delete("/:id", deleteOrderById);
 
 export default router;
