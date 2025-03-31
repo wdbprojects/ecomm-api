@@ -1,32 +1,23 @@
 import { Router } from "express";
+import {
+  createNewProduct,
+  deleteProductById,
+  getAllProducts,
+  getProductById,
+  updateProductById,
+} from "../controllers/product-controller";
 
 const router = Router();
 
 // GET ALL PRODUCTS
-router.get("/", (req, res) => {
-  res.status(200).json({ message: "healthy products GET" });
-});
+router.get("/", getAllProducts);
 // GET PRODUCT BY ID
-router.get("/:id", (req, res) => {
-  res
-    .status(200)
-    .json({ message: `healthy get single product with ID: ${req.params.id}` });
-});
+router.get("/:id", getProductById);
 // CREATE NEW PRODUCT
-router.post("/", (req, res) => {
-  res.status(200).json({ message: "healthy create new product" });
-});
+router.post("/", createNewProduct);
 // UPDATE PRODUCT BY ID
-router.put("/:id", (req, res) => {
-  res.status(200).json({
-    message: `healthy update single product with ID: ${req.params.id}`,
-  });
-});
+router.put("/:id", updateProductById);
 // DELETE PRODUCT BY ID
-router.delete("/:id", (req, res) => {
-  res.status(200).json({
-    message: `healthy delete single product with ID: ${req.params.id}`,
-  });
-});
+router.delete("/:id", deleteProductById);
 
 export default router;
