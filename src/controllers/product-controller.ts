@@ -11,7 +11,9 @@ export const getProductById = (req: Request, res: Response) => {
 export const createNewProduct = (req: Request, res: Response) => {
   console.log(req.body);
 
-  res.status(200).json({ message: "healthy create new product" });
+  res
+    .status(200)
+    .json({ message: "healthy create new product", product: req.body });
 };
 export const updateProductById = (req: Request, res: Response) => {
   res.status(200).json({

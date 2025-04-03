@@ -16,14 +16,23 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --files --env-file=.env src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.6",
     "ts-node-dev": "^2.0.0",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.41.0",
+    "express": "^4.21.2",
+    "pg": "^8.14.1"
   }
 }

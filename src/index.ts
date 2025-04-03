@@ -1,8 +1,12 @@
-import express from "express";
+import express, { json, urlencoded } from "express";
 const port = process.env.PORT;
 import productRoutes from "./routes/product-routes";
 import orderRoutes from "./routes/order-routes";
 const app = express();
+
+// NOTE: Middlewares
+app.use(urlencoded({ extended: true }));
+app.use(json());
 
 app.get("/api/v1", (req, res) => {
   res.status(200).json({ status: "healthy" });
