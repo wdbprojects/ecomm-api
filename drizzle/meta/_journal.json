@@ -8,6 +8,13 @@
       "when": 1746926354347,
       "tag": "0000_unique_impossible_man",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1746976570928,
+      "tag": "0001_nappy_red_ghost",
+      "breakpoints": true
     }
   ]
 }
